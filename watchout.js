@@ -1,7 +1,7 @@
 //Moving Enemies
 var enemyMaker = function(){
-  this.x = 1150;
-  this.y = 750;
+  this.x = 800;
+  this.y = 525;
 }
 
 var data = [];
@@ -23,13 +23,13 @@ var drag = d3.behavior.drag()
 //Define Player
 
 var lebron = d3.select('svg').selectAll('.player')
-    .data([{ 'x': 565, 'y': 365}])
+    .data([{ 'x': 400, 'y': 260}])
     .enter()
     .append('image')
     .attr('class', 'player')
     .attr("xlink:href", "man.gif")
-    .attr("height", "150px")
-    .attr("width", "150px")
+    .attr("height", "100px")
+    .attr("width", "100px")
     .attr('x', function(d) { return d.x; })
     .attr('y', function(d) { return d.y; })
     .call(drag)
@@ -43,8 +43,8 @@ var enemies = d3.select('svg').selectAll('.enemy')
     .append('image')
     .attr('class', 'enemy')
     .attr("xlink:href", "basketball.gif")
-    .attr("height", "50px")
-    .attr("width", "50px")
+    .attr("height", "40px")
+    .attr("width", "40px")
 
 //__________________________________________________________________________________________________________________
 //Update  Enemies
@@ -99,7 +99,7 @@ var coordinates = function(){
         var b = playerPosY - enemyPosY[i];
       }
       var c = Math.sqrt((a*a)+(b*b));
-      if(c < 75){
+      if(c < 50){
         colCount++;
         console.log(colCount)
         d3.select('.collisions').selectAll('span')

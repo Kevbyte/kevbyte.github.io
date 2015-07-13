@@ -9,17 +9,15 @@ svg{
 }
 
 .scoreboard{
-  width: 500px;
-  height: 110px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+  width: 200px;
+  height: 60px;
   color: white;
   background-color: #FFCC00;
   border-style: solid;
   border-color: #1947D1;
   margin-left: auto;
   display: inline-block;
-  font-size: 35px;
+  font-size: 14px;
   font-family: orbitron;
 }
 
