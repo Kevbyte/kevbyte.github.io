@@ -13,7 +13,9 @@ for(var i=0; i<13; i++){
 //__________________________________________________________________________________________________________________
 //Drag Function
 
-var drag = d3.behavior.drag()  
+var drag = d3.behavior.drag()
+    .origin(function() { var t = d3.select(this);
+            return {x: t.attr("x"), y: t.attr("y")};})  
     .on('drag', function() { lebron.attr('x', d3.event.x)
     .attr('y', d3.event.y); })
 
@@ -25,9 +27,9 @@ var lebron = d3.select('svg').selectAll('.player')
     .enter()
     .append('image')
     .attr('class', 'player')
-    .attr("xlink:href", "lbj.png")
-    .attr("height", "75px")
-    .attr("width", "75px")
+    .attr("xlink:href", "man.gif")
+    .attr("height", "150px")
+    .attr("width", "150px")
     .attr('x', function(d) { return d.x; })
     .attr('y', function(d) { return d.y; })
     .call(drag)
@@ -48,7 +50,7 @@ var enemies = d3.select('svg').selectAll('.enemy')
 //Update  Enemies
 var update = function(data){
   enemies.transition()
-    .duration(3000)
+    .duration(2000)
     .attr("x", function(d){
       return d.x * Math.random()
     })
@@ -61,7 +63,7 @@ update(data);
 
 setInterval(function(){
   update(data)
-}, 3000);
+}, 2000);
 
 
 //__________________________________________________________________________________________________________________
@@ -117,7 +119,7 @@ var coordinates = function(){
 
 setInterval(function(){
   coordinates()
-}, 100)
+}, 50)
 
 
 
