@@ -99,7 +99,7 @@ var coordinates = function(){
         var b = playerPosY - enemyPosY[i];
       }
       var c = Math.sqrt((a*a)+(b*b));
-      if(c < 50){
+      if(c < 75){
         colCount++;
         console.log(colCount)
         d3.select('.collisions').selectAll('span')
@@ -119,7 +119,7 @@ var coordinates = function(){
 
 setInterval(function(){
   coordinates()
-}, 50)
+}, 100)
 
 
 
